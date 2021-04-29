@@ -1,9 +1,9 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import Timesheets from "./Timesheets"
 
 const Profile = () => {
-  const { user, isAuthenticated } = useAuth0();
-  
+  const { user, isAuthenticated } = useAuth0();  
 
 if(isAuthenticated) {
     const { name, picture, email } = user;
@@ -18,6 +18,7 @@ if(isAuthenticated) {
             <pre>
             {JSON.stringify(user, null, 2)}
             </pre>
+            <Timesheets></Timesheets>
         </>
     );
   }
